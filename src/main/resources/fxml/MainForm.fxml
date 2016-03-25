@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.programla.pomodoro.MainFormController">
+   <bottom>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <Button id="btnCounter" fx:id="btnCount" cancelButton="true" defaultButton="true" mnemonicParsing="false" onAction="#count" text="Start (enter)" />
+            <Button fx:id="btnReset" mnemonicParsing="false" onAction="#reset" text="Reset" />
+        </items>
+      </ToolBar>
+   </bottom>
+   <top>
+      <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="597.0" BorderPane.alignment="CENTER">
+         <center>
+            <Label fx:id="lblCounter" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" prefHeight="73.0" prefWidth="265.0" text="CountDown" textAlignment="CENTER" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Label>
+         </center>
+      </BorderPane>
+   </top>
+   <center>
+      <ProgressIndicator fx:id="prgTimer" mouseTransparent="true" prefHeight="300.0" prefWidth="282.0" progress="0.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
