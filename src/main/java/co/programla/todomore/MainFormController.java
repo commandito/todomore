@@ -1,4 +1,4 @@
-package co.programla.pomodoro;
+package co.programla.todomore;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -17,7 +17,7 @@ import javafx.util.Duration;
 /**
  * FXML Controller class
  *
- * @author Kenan ERARSLAN <kenan.erarslan at amadeus.com>
+ * @author Kenan ERARSLAN <kenan at enginaar.com>
  */
 public class MainFormController implements Initializable {
 
@@ -29,12 +29,9 @@ public class MainFormController implements Initializable {
     @FXML
     private Button btnCount;
 
-    private final int TOTAL_TIME = 25 * 60;
+    private final int TOTAL_TIME = 1 * 60;
     private int countdown = TOTAL_TIME;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -69,7 +66,8 @@ public class MainFormController implements Initializable {
 
     private void refreshUI() {
         lblCounter.setText(countdown / 60 + ":" + countdown % 60);
-        prgTimer.setProgress((double) ( TOTAL_TIME / TOTAL_TIME - countdown));
+        prgTimer.setProgress((double) (TOTAL_TIME - countdown) / TOTAL_TIME);
+        System.out.println((double) (TOTAL_TIME - countdown) / TOTAL_TIME);
     }
 
     public void reset() {

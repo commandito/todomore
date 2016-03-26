@@ -3,20 +3,20 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>co.programla</groupId>
-    <artifactId>todomoro</artifactId>
+    <artifactId>todomore</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Todomoro</name>
+    <name>Todomore</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mainClass>co.programla.pomodoro.MainApp</mainClass>
+        <mainClass>co.programla.todomore.MainApp</mainClass>
     </properties>
 
     <organization>
         <!-- Used as the 'Vendor' for JNLP generation -->
-        <name>Your Organisation</name>
+        <name>Programla.co</name>
     </organization>
 
     <build>
