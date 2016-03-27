@@ -29,12 +29,13 @@ public class MainFormController implements Initializable {
     @FXML
     private Button btnCount;
 
-    private final int TOTAL_TIME = 1 * 60;
-    private int countdown = TOTAL_TIME;
+    private int countdown;
+    private State state;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        state = State.INITIAL;
+        reset();        
     }
 
     public void count() {
@@ -46,7 +47,7 @@ public class MainFormController implements Initializable {
                     refreshUI();
                 }
             }), new KeyFrame(Duration.seconds(1)));
-            timeline.setCycleCount(TOTAL_TIME);
+            timeline.setCycleCount(countdown);
 
         }
 
@@ -66,12 +67,36 @@ public class MainFormController implements Initializable {
 
     private void refreshUI() {
         lblCounter.setText(countdown / 60 + ":" + countdown % 60);
-        prgTimer.setProgress((double) (TOTAL_TIME - countdown) / TOTAL_TIME);
-        System.out.println((double) (TOTAL_TIME - countdown) / TOTAL_TIME);
+        prgTimer.setProgress((double) (state.timeAsSecond() - countdown) / state.timeAsSecond());
     }
 
     public void reset() {
-        countdown = TOTAL_TIME;
+        countdown = state.timeAsSecond();
         refreshUI();
+    }
+    
+    public void shortBreak() {
+        state = State.SHORT_BREAK;
+        reset();
+    }
+    
+    public void longBreak() {
+        state = State.LONG_BREAK;
+        reset();
+    }
+   
+    public void workRegular() {
+        state = State.WORKING;
+        reset();
+    }
+    
+    public void workRandomly() {
+        state = State.JUST_WORK;
+        reset();
+    }
+    
+    public void breakRandomly() {
+        state = State.JUST_BREAK;
+        reset();
     }
 }

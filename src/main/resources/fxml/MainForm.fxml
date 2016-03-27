@@ -8,13 +8,22 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.programla.todomore.MainFormController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.programla.todomore.MainFormController">
    <bottom>
       <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <items>
           <Button id="btnCounter" fx:id="btnCount" cancelButton="true" defaultButton="true" mnemonicParsing="false" onAction="#count" text="Start (enter)" />
-            <Button fx:id="btnShortBreak" mnemonicParsing="false" text="Short Break" />
-            <Button fx:id="btnLongBreak" mnemonicParsing="false" prefHeight="25.0" prefWidth="210.0" text="Long Break" />
+            <SplitMenuButton mnemonicParsing="false" onAction="#workRegular" text="Work Regular">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#workRandomly" text="Work" />
+              </items>
+            </SplitMenuButton>
+            <SplitMenuButton mnemonicParsing="false" onAction="#shortBreak" text="Short Break">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#longBreak" text="Long Break" />
+                  <MenuItem mnemonicParsing="false" onAction="#breakRandomly" text="Break" />
+              </items>
+            </SplitMenuButton>
             <Button fx:id="btnReset" mnemonicParsing="false" onAction="#reset" text="Reset" />
         </items>
       </ToolBar>
@@ -30,7 +39,7 @@
          </center>
       </BorderPane>
    </top>
-   <center>
-      <ProgressIndicator fx:id="prgTimer" mouseTransparent="true" prefHeight="300.0" prefWidth="282.0" progress="0.0" BorderPane.alignment="CENTER" />
-   </center>
+   <left>
+      <ProgressIndicator fx:id="prgTimer" mouseTransparent="true" prefHeight="305.0" prefWidth="287.0" progress="0.0" BorderPane.alignment="CENTER" />
+   </left>
 </BorderPane>
