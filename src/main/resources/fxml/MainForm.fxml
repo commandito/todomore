@@ -24,7 +24,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#breakRandomly" text="Break" />
               </items>
             </SplitMenuButton>
-            <Button fx:id="btnReset" mnemonicParsing="false" onAction="#reset" text="Reset" />
+            <Button fx:id="btnReset" mnemonicParsing="false" onAction="#rst" text="Reset" />
         </items>
       </ToolBar>
    </bottom>
@@ -40,6 +40,13 @@
       </BorderPane>
    </top>
    <left>
-      <ProgressIndicator fx:id="prgTimer" mouseTransparent="true" prefHeight="305.0" prefWidth="287.0" progress="0.0" BorderPane.alignment="CENTER" />
+      <ProgressIndicator fx:id="prgTimer" mouseTransparent="true" prefHeight="247.0" prefWidth="248.0" progress="0.0" BorderPane.alignment="CENTER" />
    </left>
+   <center>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <content>
+            <VBox fx:id="cntTimeline" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="291.0" prefWidth="451.0" />
+         </content>
+      </ScrollPane>
+   </center>
 </BorderPane>

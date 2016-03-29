@@ -1,9 +1,7 @@
 .button {
     -fx-font-weight: bold;
 }
-#countdown {
-    color: red;
-    -fx-background-color: red;
-    width: 100%;
-}
 
+#prgTimer {
+    margin: 0 10px;
+}
